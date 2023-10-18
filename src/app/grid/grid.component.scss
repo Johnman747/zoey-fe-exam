@@ -1,0 +1,110 @@
+.grid {
+    font: normal normal normal 13px/18px 'Noto Sans';
+    margin-left: 225px;
+    background: #fff 0% 0% no-repeat padding-box;
+    justify-content: center;
+    padding-top: 69px;
+    .tabs{
+        background-color: #ffffff;
+        padding-left: 19px;
+        .tab{
+            display: inline-block;
+            box-sizing: border-box;
+            padding-top: 8px;
+            height: 38px;
+            width:84px;
+            font-size: 14px;
+            text-align: center;
+            position: relative;
+            margin-right: 20px;
+            &.active{
+                background: #F7F8FA 0% 0% no-repeat padding-box;
+                border-radius: 7px 7px 0px 0px;
+                opacity: 1;
+                border-top: 1px solid #D1D4E3;
+                border-left: 1px solid #D1D4E3;
+                border-right: 1px solid #D1D4E3;
+                border-bottom: 1px solid #F7F8FA;
+            }
+        }
+    }
+    .grid-header {
+        border-top: 1px  solid #D1D4E3;
+        width: 100%;
+        padding-top: 20px;
+        background-color: #F7F8FA;
+        padding-left: 35px;
+        .text-filter  {
+        height: 36px;   
+        width: 347px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #D1D4E3;
+        border-radius: 5px;
+        padding-left: 15px;
+        margin-bottom: 18px;
+        }
+        .checkbox {
+            margin-left: 18px;
+            margin-right: 15px;
+        }
+        .header-title {
+            display: inline-block;
+            color: #000;
+            font-weight: 800;
+            width: 120px;
+            vertical-align: middle;
+            margin-bottom: 9px;
+            &.email{
+                width: 200px;
+            } 
+        }
+        margin: auto;
+    }
+    .grid-conatiner{
+        background-color: #F7F8FA;
+        height: calc(100vh - 214px);
+        .grid-items {
+            border: 1px solid #D1D4E3;
+            border-radius: 5px;
+            height: 530px;
+            overflow:scroll;
+            margin-left: 35px;
+            width:1003px;
+            .item {
+                width:100%;
+                height: 60px;
+                margin-top: auto;
+                background-color: #ffffff;
+                border-bottom: 1px solid #D1D4E3;
+                text-align: left;
+                input  {
+                    margin-left: 17.7px;
+                    margin-right: 15px;
+                    vertical-align: 58px; 
+                }
+                .item-content{
+                    text-align: left;
+                    letter-spacing: 0px;
+                    color: #707277;
+                    opacity: 1;
+                    display: inline-block;
+                    width: 120px;
+                    vertical-align: 60px; 
+                    line-height: normal; 
+                    &.email{
+                        width: 200px;
+                    }    
+                    &.created_at{
+                        transform: translateY(25%);
+                    }
+                }
+                .bold{
+                    color: #000;
+                    font-weight: 800;
+                    
+                }
+            }
+        }
+    }
+    
+}

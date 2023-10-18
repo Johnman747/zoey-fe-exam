@@ -1,0 +1,38 @@
+<div class="grid">
+    <div class="tabs">
+        <div class="tab" [ngClass]="tabFilter === '' ? 'active' : ''" (click)="tabFilterClick('')">All ({{orders.length}})</div>
+        <div class="tab" [ngClass]="tabFilter === 'Processing' ? 'active' : 'inactive'" (click)="tabFilterClick('Processing')">Open ({{orderTotal('Processing')}})</div>
+        <div class="tab" [ngClass]="tabFilter === 'Pending' ? 'active' : 'inactive'" (click)="tabFilterClick('Pending')">Pending ({{orderTotal('Pending')}})</div>
+        <div class="tab" [ngClass]="tabFilter === 'Complete' ? 'active' : ''" (click)="tabFilterClick('Complete')">Closed ({{orderTotal('Complete')}})</div>
+    </div>
+    <div class="grid-header">
+        <div>
+            <input class="text-filter" (value)="(value)" placeholder="Enter Order #, Email, Name..." (keyup)="searchFilter($event)" type="text"/>
+        </div>
+        <input class="checkbox" (change)="checkAll($event)" [checked]="allCheckboxCheck()" type="checkbox"/>
+        <div class="header-title">Order #</div>
+        <div class="header-title">Status</div>
+        <div class="header-title">Created</div>
+        <div class="header-title">Ship To Name</div>
+        <div class="header-title">Bill To Name</div>
+        <div class="header-title email">Email</div>
+        <div class="header-title">Total</div>
+    </div>
+    <div class="grid-conatiner">
+        <div class="grid-items">
+            <div class="item" *ngFor="let order of filteredOrders">
+                <input class="checkbox" (change)="checkBoxClick(order['id'])" [checked]="checkBoxCheck(order['id'])"  type="checkbox"/>
+                <div class="item-content bold increment_id">{{order['increment_id']}} </div>
+                <div class="item-content status">{{order['status']}}</div>
+                <div class="item-content created_at">
+                    {{formatDateTop(order['created_at'])}}
+                    {{formatDateBottom(order['created_at'])}}
+                </div>
+                <div class="item-content ship_to">{{order['ship_to']}}</div>
+                <div class="item-content bill_to">{{order['bill_to']}}</div>
+                <div class="item-content email">{{order['email']}}</div>
+                <div class="item-content grand_total">{{formatTotal(order['grand_total'])}}</div>
+            </div>
+        </div>
+    </div>
+</div>
